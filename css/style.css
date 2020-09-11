@@ -157,6 +157,32 @@ body {
   transform: translateY(0px);
   box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
+.card {
+  perspective: 150rem;
+  position: relative;
+  -moz-perspective: 150rem;
+  height: 50rem; }
+  .card__side {
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50rem;
+    width: 100%;
+    border-radius: 3px;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.9)), url("../img/nature.jpg");
@@ -185,10 +211,21 @@ body {
   padding: 25rem 0;
   margin-top: -20vh; }
 
+.section-feature {
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8));
+  background-size: cover;
+  height: 10rem;
+  transform: skewY(-7deg); }
+  .section-feature > * {
+    transform: skewY(7deg); }
+
+.section-tour {
+  padding: 25rem 0 50rem 0;
+  background-color: #f7f7f7; }
+
 .row {
   max-width: 114rem;
-  margin: 0 auto;
-  background-color: #eee; }
+  margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row::after {
