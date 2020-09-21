@@ -1,0 +1,41 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+
+  &__content {
+    @include absoluteCenter;
+    background-color: #fff;
+    width: 75%;
+    display: table;
+    box-shadow: 0 3rem 5rem rgba($color-black, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__left {
+    width: 33.3%;
+    display: table-cell;
+  }
+  &__right {
+    width: 66.7%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  &__text {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 1em; // 1em == current selector font-size(15px)
+    column-rule: 1px solid gray;
+    hyphens: auto;
+  }
+}
